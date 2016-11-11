@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-block bg-faded">
+    <div class="row">
+      <div class="col-md-9">
+        <form class="form-inline" (ngSubmit)="search()">
+          <div class="form-group">
+            <input type="text" name="q" class="form-control" [(ngModel)]="q" />
+          </div>
+          <button type="submit" class="btn btn-outline-info">{{'search'}}</button>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <span class="pull-md-right">
+          <a class="btn btn-success" [routerLink]="['/nodes', 'new']">new-post</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let node of nodes">
+    <div class="card">
+      <a *ngIf="node.imgURL" class="p-1 float-xs-left" [routerLink]="['/nodes', node.nid, 'view']">
+        <img class="rounded-circle" [src]="node.imgURL" [alt]="node.title" width="100" height="100"/>
+      </a>
+      <div class="card-block">
+        <h4 class="card-title"><a [routerLink]="['/nodes', node.id, 'view']">{{node.title}}</a></h4>
+        <!--
+        <h6 class="card-subtitle text-muted">{{node.created|date:'short'}}</h6>
+        -->
+        <div class="card-text" [innerHTML]="node.teaser"></div>
+        <div class="text-md-right">
+          <a [routerLink]="['/nodes', node.id, 'view']">view</a>
+          |
+          <a [routerLink]="['/nodes', node.id, 'edit']">edit</a>
+          |
+          <a [routerLink]="['/nodes', node.id, 'delete']">delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

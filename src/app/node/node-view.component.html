@@ -1,0 +1,19 @@
+<div class="card" *ngIf="node">
+  <div class="card-header">
+    <h1 class="card-title text-xs-center text-uppercase text-justify">
+      {{node.title}}
+    </h1>
+    <p *ngIf="node.created"  class="text-xs-center text-muted"><small>{{node.created}}</small></p>
+    <!--
+    <p class="text-xs-center text-muted"><small>{{node.created|date:'short'}}</small></p>
+    -->
+  </div>
+  <div class="card-block">
+    <ndp-node-tabs [node]="node"></ndp-node-tabs>
+    <img *ngIf="node.imgURL" class="rounded p-1 float-xs-left" [src]="node.imgURL" [alt]="node.title" [title]="node.title" />
+    <div class="panel-body" [innerHtml]="node.content"></div>
+  </div>
+  <div class="card-footer">
+    back to <a [routerLink]="['','nodes']">{{'node-list'}}</a>
+  </div>
+</div>

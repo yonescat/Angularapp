@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="offset-md-3 col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h1>{{'login'}}</h1>
+      </div>
+      <div class="card-block">
+        <form #f="ngForm" id="form" name="form" class="form" (ngSubmit)="submit()" novalidate>
+          <div class="form-group" [class.has-danger]="name.invalid && !name.pristine">
+            <label class="form-control-label" for="name">{{'name'}}</label>
+            <input class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="data.name" required/>
+            <div class="form-control-feedback" *ngIf="name.invalid && !name.pristine">
+              <p *ngIf="name.errors.required">Username is required</p>
+            </div>
+          </div>
+          <div class="form-group" [class.has-danger]="pass.invalid && !pass.pristine">
+            <label class="form-control-label" for="pass">{{'pass'}}</label>
+            <input class="form-control" type="password" name="pass" id="pass" #pass="ngModel" [(ngModel)]="data.pass" required/>
+            <div class="form-control-feedback" *ngIf="pass.invalid && !pass.pristine">
+              <p ng-message="pass.errors.required">Password is required</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg" [disabled]="f.invalid || f.pending">  {{'login'}}</button>
+          </div>
+        </form>
+        <ngb-alert *ngIf="errorMessage" [type]="danger" [dismissible]="false">{{ errorMessage }}</ngb-alert>
+      </div>
+      <div class="card-footer">
+        Not registered, <a [routerLink]="['', 'register']">{{'register'}}</a>
+      </div>
+    </div>
+  </div>
+</div>

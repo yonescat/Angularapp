@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.page {
+  margin-top: 60px;
+  min-height: 450px;
+}
+
+.page-header {
+  margin: 40px 0;
+}

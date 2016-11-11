@@ -1,0 +1,12 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/nodes', node.id, 'view']" [routerLinkActive]="['active']">{{'view'}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/nodes', node.id, 'edit']" [routerLinkActive]="['active']">{{'edit'}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/nodes', node.id, 'delete']" [routerLinkActive]="['active']">{{'delete'}}</a>
+  </li>
+</ul>
+<div class="dropdown-divider"></div>
