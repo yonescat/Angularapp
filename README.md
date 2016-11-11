@@ -44,11 +44,20 @@ composer require drupal/devel
 ```
 composer require drupal/devel
 ```
+* Install CORS module
+  
+  https://www.drupal.org/project/cors
+  This module is required for requests a resource from a different domain.
+  Cross-origin resource sharing (CORS) is a mechanism that allows a web page to make XMLHttpRequests to another domain.
+
 * Import Drupal Configs
   
   In the "drupal-configs" folder of the project there are 2 config files
   * "rest.settings.yml" to enable the REST for node and user entities
   * "views.view.node_rest_export.yml" for the REST list of nodes.
+  * "cors.settings.yml" for the CORS settings
+
+  Maybe the CORS settings needs to be updated if the Angular App address is different than "".
   Those configs can be importated in the Drupal "Configuration synchronization"
   Home > Administration >  Configuration > Development > Synchronize > Single item
   "admin/config/development/configuration/single/import"
