@@ -25,9 +25,11 @@ Besides the basic modules, components implementations.
 
 ####Drupal side:
 * Install new Drupal 8 on your environment
+  
   A good "kickstart" is Drupal project composer template
   https://github.com/drupal-composer/drupal-project
 * Install REST UI module
+  
   https://www.drupal.org/project/restui
   with composer template
 ```
@@ -35,14 +37,15 @@ composer require drupal/devel
 ```
 
 * Install Devel Generate module
+  
   https://www.drupal.org/project/devel
   Useful for Generate new content
-
   with composer template
 ```
 composer require drupal/devel
 ```
 * Import Drupal Configs
+  
   In the "drupal-configs" folder of the project there are 2 config files
   * "rest.settings.yml" to enable the REST for node and user entities
   * "views.view.node_rest_export.yml" for the REST list of nodes.
@@ -50,28 +53,36 @@ composer require drupal/devel
   Home > Administration >  Configuration > Development > Synchronize > Single item
   "admin/config/development/configuration/single/import"
 * Generate or create content
+  
   Either you create manually nodes or using Devel Generate, the recommendation is to use 
   Articles Content type.
 
 ####Angular side
 * Install node.js
-https://nodejs.org/en/
+  
+  https://nodejs.org/en/
 * Install Angular-CLI
+  
   https://github.com/angular/angular-cli
   This project is built with Angular-CLI, so it is required. 
   `npm install -g angular-cli`
   `sudo` could be required on some machines
 * Download this project
+  
   `git clone git@github.com:vasike/ng-drupal-poc.git`
 * `cd ng-drupal-poc`
 * Update the App configs
+  
   In the "app-configs" folder you find a congif file that you need to update with your Drupal credentials.
   @see : app.config.ts file.
 * Install the project
+  
   `npm install`
 * Run / Test the app: with Angular-CLI
+  
   `ng serve`
 * See the app in the browser
+  
   http://localhost:4200
 * Enjoy
 
