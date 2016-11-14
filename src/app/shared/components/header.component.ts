@@ -12,7 +12,6 @@ export class HeaderComponent {
   }
 
   logout() {
-    console.log('calling onLogout...');
     this.auth.logout();
   }
 }

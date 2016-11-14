@@ -1,14 +1,15 @@
-import {CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
-import {Injectable} from '@angular/core';
 
-import {AuthService} from './auth.service';
+import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
+import { Injectable } from '@angular/core';
+
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class NoAuthGuard implements CanActivate {
 
   constructor(private router: Router, private auth: AuthService) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot): boolean {
     this.auth
       .ensureAuthIs(false)
       .subscribe((auth) => {

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
 
 import { AuthService } from '../shared/services/auth.service';

@@ -1,5 +1,5 @@
-import { Injectable, Inject, OpaqueToken, Optional } from '@angular/core';
-import { Http, Headers, RequestOptions, Response, URLSearchParams } from '@angular/http';
+import { Injectable, Inject,  } from '@angular/core';
+import { Http, Headers, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import { APP_CONFIG, AppConfig } from '../../../../app-configs/app.config';
@@ -17,13 +17,12 @@ export class ApiService {
 
   constructor(
     private http: Http,
-    @Optional() @Inject(APP_CONFIG) config: AppConfig
+    @Inject(APP_CONFIG) config: AppConfig
   ) {
     this.API_URL = config.apiEndpoint;
   }
 
   public get(path: string, term?: any): Observable<any> {
-    console.log('get resources from url:' + `${this.API_URL}${path}`);
     let search = new URLSearchParams();
 
     if (term) {

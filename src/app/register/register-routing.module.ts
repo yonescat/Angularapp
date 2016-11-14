@@ -9,8 +9,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-  providers: [AuthService]
+  imports: [ RouterModule.forChild(routes) ],
+  exports: [ RouterModule ],
+  providers: [ AuthService ]
 })
 export class RegisterRoutingModule { }

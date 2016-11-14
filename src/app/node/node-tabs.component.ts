@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ndp-node-tabs',
@@ -8,7 +8,5 @@ import { Component, Input} from '@angular/core';
 export class NodeTabsComponent {
 
   @Input() node: Node;
-
-  constructor() { }
 
 }

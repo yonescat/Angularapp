@@ -3,7 +3,6 @@ import { OpaqueToken } from '@angular/core';
 export const APP_CONFIG = new OpaqueToken('app.config');
 
 export interface AppConfig {
-  jwtKey: string;
   apiEndpoint: string;
   apiToken: string;
   apiNodesPath: string;
@@ -16,7 +15,6 @@ export interface AppConfig {
 }
 
 export const DEFAULT_APP_CONFIG: AppConfig = {
-  jwtKey: 'crsf_token',
   apiEndpoint: 'http://drupal8.dev',
   apiToken: 'crsf_token',
   apiNodesPath: '/node-rest-export-path',
