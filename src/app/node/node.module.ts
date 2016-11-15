@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { APP_CONFIG, DEFAULT_APP_CONFIG } from '../../../app-configs/app.config';
+import { FilterTextboxComponent } from '../shared/components/filter-textbox.component';
 import { NodeService } from './node.service';
 import { NodeRoutingModule } from './node-routing.module';
 import { NodeListComponent } from './node-list.component';
@@ -20,6 +21,7 @@ import { NodeTabsComponent } from './node-tabs.component';
     NodeRoutingModule
   ],
   declarations: [
+    FilterTextboxComponent,
     NodeListComponent,
     NodeViewComponent,
     NodeEditComponent,

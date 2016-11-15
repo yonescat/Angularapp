@@ -24,7 +24,9 @@ Besides the basic modules, components implementations.
 * Routing with Guards and Resolvers.
 * Nested Components
 * Dependency injection
-* Use Bootstrap 4 for templates.
+* Use Bootstrap 4 for templates - NG Bootstrap library.
+* Pagination with NG Bootstrap pagination component.
+* Search - basic search (filter) for the nodes data returned from Drupal REST View. 
 
 
 ### Getting Started
@@ -92,8 +94,6 @@ composer require drupal/devel
 ## ToDo
 * Register
 * Files management on nodes.
-* Paginations
-* Search
 
   .. more to come...
 

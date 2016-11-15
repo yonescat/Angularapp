@@ -2,12 +2,7 @@
   <div class="card-block bg-faded">
     <div class="row">
       <div class="col-md-9">
-        <form class="form-inline" (ngSubmit)="search()">
-          <div class="form-group">
-            <input type="text" name="q" class="form-control" [(ngModel)]="q" />
-          </div>
-          <button type="submit" class="btn btn-outline-info">{{'search'}}</button>
-        </form>
+        <ndp-filter-textbox (changed)="filterChanged($event)"></ndp-filter-textbox>
       </div>
       <div class="col-md-3">
         <span class="pull-md-right">
@@ -19,7 +14,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6" *ngFor="let node of nodes">
+  <div class="col-md-6" *ngFor="let node of (filteredNodes ? filteredNodes.slice((pagination.page-1)*pageSize, (pagination.page)*pageSize): [])">
     <div class="card">
       <a *ngIf="node.imgURL" class="p-1 float-xs-left" [routerLink]="['/nodes', node.nid, 'view']">
         <img class="rounded-circle" [src]="node.imgURL" [alt]="node.title" width="100" height="100"/>
@@ -41,3 +36,4 @@
     </div>
   </div>
 </div>
+<ngb-pagination #pagination [collectionSize]="totalItems" [(page)]="currentPage" [(pageSize)]="pageSize" [boundaryLinks]="true"></ngb-pagination>
