@@ -5,8 +5,7 @@ import { NodeService } from './node.service';
 
 @Component({
   selector: 'ndp-node-edit',
-  templateUrl: './node-edit.component.html',
-  styleUrls: ['./node-edit.component.css']
+  templateUrl: './node-edit.component.html'
 })
 
 export class NodeEditComponent implements OnInit {

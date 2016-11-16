@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ndp-node-tabs',
-  templateUrl: './node-tabs.component.html',
-  styleUrls: ['./node-tabs.component.css']
+  templateUrl: './node-tabs.component.html'
 })
 export class NodeTabsComponent {
 

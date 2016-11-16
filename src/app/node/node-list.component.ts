@@ -4,8 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'ndp-node-list',
-  templateUrl: './node-list.component.html',
-  styleUrls: ['./node-list.component.css']
+  templateUrl: './node-list.component.html'
 })
 export class NodeListComponent implements OnInit, OnDestroy {
   q: string = '';

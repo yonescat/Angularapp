@@ -5,8 +5,7 @@ import { NodeService } from './node.service';
 
 @Component({
   selector: 'ndp-node-delete',
-  templateUrl: './node-delete.component.html',
-  styleUrls: ['./node-delete.component.css']
+  templateUrl: './node-delete.component.html'
 })
 export class NodeDeleteComponent implements OnInit {
   form_title: string;

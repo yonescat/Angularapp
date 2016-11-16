@@ -4,8 +4,7 @@ import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'ndp-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
 
