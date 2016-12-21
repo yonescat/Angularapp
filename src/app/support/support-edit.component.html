@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="col-md-6">
+        <div class="card" *ngIf="support">
+        <div class="card-header">
+            <h1 class="card-title">{{form_title}}</h1>
+            <!--
+            <p *ngIf="node.created">created at: {{node?.created | date}} &bull;</p>
+            -->
+            <p *ngIf="support.created">created at: {{support.created}}</p>
+            <p><small>all fields marked with star are required.</small></p>
+        </div>
+        <div class="card-block">
+            <ndp-support-tabs *ngIf="support.id" [support]="support"></ndp-support-tabs>
+            <form id="form" #f="ngForm" name="form" class="form" (ngSubmit)="save()" novalidate>
+
+            <div class="form-group" [class.has-danger]="title.invalid && !title.pristine">
+                <label class="form-control-label" for="title">{{'title'}} *</label>
+                <input class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="support.title" required/>
+                <div class="form-control-feedback" *ngIf="title.invalid && !title.pristine">
+                <p *ngIf="title.errors.required">Support Ticket Title is required</p>
+                </div>
+            </div>
+
+
+            
+
+            <div class="form-group" [class.has-danger]="field_message.invalid && !field_message.pristine">
+                <label class="form-control-label" for="field_message">{{'content'}} *</label>
+                <textarea class="form-control" #field_message="ngModel" type="field_message" name="field_message" id="field_message" [(ngModel)]="support.field_message" rows="8" required
+                minlength="10">
+                </textarea>
+                <div class="form-control-feedback" *ngIf="field_message.field_message && !field_message.pristine">
+                <p *ngIf="field_message.errors.required">The message is required</p>
+                <p *ngIf="field_message.errors.minlength">At least 10 chars</p>
+                </div>
+            </div>
+                
+                <div class="form-group">
+                        <label class="form-control-label" for="status">Status *</label>
+                        <select [(ngModel)]="support.field_status" name="field_Status" class="form-control form-control-sm">
+                        <option *ngFor="let s of status"  id="field_status" name="field_status"   ngValue= {{s}}>{{s}}</option>
+                </select>
+                </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="priority">Priority *</label>
+                        <select [(ngModel)]="support.field_priority" name="field_priority" class="form-control form-control-sm">
+                        <option *ngFor="let p of priority"  id="field_priority" name="field_priority"   ngValue= {{p}}>{{p}}</option>
+                </select>
+                </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="department">Department *</label>
+                        <select [(ngModel)]="support.field_department" name="field_department" class="form-control form-control-sm">
+                        <option *ngFor="let d of department"  id="field_department" name="field_department"   ngValue= {{d}}>{{d}}</option>
+                </select>
+
+                </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg" [disabled]="f.invalid || f.pending">  {{'save'}}</button>
+            </div>
+            </form>
+            <ngb-alert *ngIf="errorMessage" [type]="danger" [dismissible]="false">{{ errorMessage }}</ngb-alert>
+        </div>
+        <div class="card-footer">
+            back to <a [routerLink]="['','support']">{{'Ticket List'}}</a>
+        </div>
+        </div>
+   </div>
+
+    <div class="col-md-6">
+
+      
+          
+          
+        <div class="card">
+         <h4 style="padding:15px;">Preview your ticket</h4>
+        <div class="card-block">
+            <h4 class="card-title">Title: {{support.title}}</h4>
+            <p class="card-text">Message: {{support.field_message}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Priority: {{support.field_priority}}</li>
+            <li class="list-group-item">Department: {{support.field_department}}</li>
+            <li class="list-group-item">Status: {{support.field_status}}</li>
+        </ul>
+    
+        </div>
+    </div>
+</div>

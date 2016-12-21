@@ -1,0 +1,23 @@
+  <h4 class="card-title"><a [routerLink]="['/support', support.nid, 'view']">{{support.title}}</a></h4>
+        
+         
+        <div class="">
+          <h6>
+             <div class="status">Created by: {{support.name}} {{support.mail}}</div>
+              
+            </h6>
+        </div>
+        <div class="">
+          <h6>
+              <div class="status">Status: {{support.field_status}}</div>
+              <div class="status">Priority: {{support.field_priority}}</div>
+              <div class="status">Department: {{support.field_department}}</div>
+              <div>Doccument attached:</div>
+              <div class="status"  [innerHTML]="support.field_attachments"> {{support.field_attachments}}</div>
+            </h6>
+
+            <div class="panel-body" [innerHtml]="support.field_message"></div>
+
+            {{field_message}}
+            <div>created at: {{support.created}}</div>
+        </div>

@@ -1,0 +1,19 @@
+md-sidenav {
+    
+    padding-top:35px;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.5); 
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+}
+a {
+    text-align: center;
+    display: block;
+    color: #fff !important;
+}
+ndp-sidenav.menu-closed {
+    display: none ;
+}

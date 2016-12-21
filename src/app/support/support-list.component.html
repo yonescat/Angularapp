@@ -1,0 +1,51 @@
+   
+   
+        <div class="card">
+  <div class="card-block bg-faded">
+    <div class="row">
+      <div class="col-md-9">
+        <ndp-filter-textbox (changed)="filterChanged($event)"></ndp-filter-textbox>
+      </div>
+      <div class="col-md-3">
+        <span class="pull-md-right">
+          <a class="btn btn-success" [routerLink]="['/support', 'new']">Open Ticket</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="loader-inner ball-clip-rotate" *ngIf="isSupportLoading">
+  <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+   </div>
+</div>
+  <div class="col-md-12" *ngFor="let support of (filteredSupports ? filteredSupports.slice((pagination.page-1)*pageSize, (pagination.page)*pageSize): [])">
+    <div class="card">
+      
+      <div class="card-block">
+        <h4 class="card-title"><a [routerLink]="['/support', support.nid, 'view']">{{support.title}}</a></h4>
+        
+         
+        <div class="col-md-6">
+          <h6>
+             <span class="status">Created by: {{support.name}} {{support.mail}}</span>
+              
+            </h6>
+        </div>
+        <div class="col-md-6 text-md-right">
+          <h6>
+              <span class="status">Status: {{support.field_status}} |</span>
+              <span class="status">Priority: {{support.field_priority}} |</span>
+              <span class="status">Department: {{support.field_department}}</span>
+            </h6>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+</div>
+<ngb-pagination #pagination [collectionSize]="totalItems" [(page)]="currentPage" [(pageSize)]="pageSize" [boundaryLinks]="true"></ngb-pagination>
