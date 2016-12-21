@@ -10,7 +10,7 @@ import { NodeService } from './node.service';
 export class NodeDeleteComponent implements OnInit {
   form_title: string;
   node: Node;
-  id: number;
+  nid: number;
   errorMessage: string;
 
   constructor(
@@ -20,8 +20,8 @@ export class NodeDeleteComponent implements OnInit {
   ) { }
 
   delete() {
-    if (this.id) {
-      this.nodeService.deleteNode(this.id)
+    if (this.nid) {
+      this.nodeService.deleteNode(this.nid)
         .subscribe(() => {
           this.nodeService.afterNodeOperation();
         });
@@ -32,8 +32,8 @@ export class NodeDeleteComponent implements OnInit {
     // Use the node response data from Resolver;
     // @see node.resolver
     this.node = this.nodeService.getNodeData(this.route.snapshot.data['node']);
-    this.id = this.node.id;
-    this.form_title = 'Delete node ' + this.node.title + ' [id:' + this.id + ']';
+    this.nid = this.node.nid;
+    this.form_title = 'Delete node ' + this.node.title + ' [id:' + this.nid + ']';
 
   }
 

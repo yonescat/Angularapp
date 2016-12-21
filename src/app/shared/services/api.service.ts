@@ -7,11 +7,12 @@ import { APP_CONFIG, AppConfig } from '../../../../app-configs/app.config';
 @Injectable()
 export class ApiService {
 
-  private API_URL: string;
+  public API_URL: string;
 
   private headers: Headers = new Headers({
     'Content-Type': 'application/hal+json',
-    'Accept': 'application/hal+json'
+    'Accept': 'application/hal+json',
+    
   });
 
 

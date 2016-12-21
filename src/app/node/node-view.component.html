@@ -10,8 +10,8 @@
   </div>
   <div class="card-block">
     <ndp-node-tabs [node]="node"></ndp-node-tabs>
-    <img *ngIf="node.imgURL" class="rounded p-1 float-xs-left" [src]="node.imgURL" [alt]="node.title" [title]="node.title" />
-    <div class="panel-body" [innerHtml]="node.content"></div>
+    <img *ngIf="node.field_image" class="rounded p-1 float-xs-left" src="https://www.yonescat.co.uk{{node.field_image}}" [alt]="node.title" [title]="node.title" />
+    <div class="panel-body" [innerHtml]="node.body"></div>
   </div>
   <div class="card-footer">
     back to <a [routerLink]="['','nodes']">{{'node-list'}}</a>

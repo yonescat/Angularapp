@@ -12,14 +12,21 @@ export interface AppConfig {
   apiLogoutPath: string;
   apiRegisterPath: string;
   apiRequestFormat: string;
+  apiSupportsPath: string;
+  apiSupportPath: string;
+  apiNewSupportPath:string;
+
 }
 
 export const DEFAULT_APP_CONFIG: AppConfig = {
-  apiEndpoint: 'http://drupal8.dev',
+  apiEndpoint: 'http://yonescat.co.uk',
   apiToken: 'crsf_token',
-  apiNodesPath: '/node-rest-export-path',
+  apiNodesPath: '/api/v1/article',
   apiNodePath: '/node',
-  apiNewNodePath: '/entity/node',
+  apiNewNodePath: '/entity/node/',
+  apiSupportsPath: '/api/v1/article',
+  apiSupportPath: '/support-tickets',
+  apiNewSupportPath: '/entity/node/',
   apiLoginPath: '/user/login',
   apiLogoutPath: '/user/logout',
   apiRegisterPath: '/user/register',

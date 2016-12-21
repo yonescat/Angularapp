@@ -67,7 +67,7 @@ export class NodeService {
 
   newNodeData(): Node {
     return {
-      id: 0,
+      nid: 0,
       title: '',
       imgURL: '',
       content: '',

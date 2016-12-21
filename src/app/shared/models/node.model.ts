@@ -1,5 +1,5 @@
 export interface  Node {
-  id: number;
+  nid: number;
   title: string;
   imgURL: string;
   teaser?: string;

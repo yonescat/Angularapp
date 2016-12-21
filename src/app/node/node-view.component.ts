@@ -9,7 +9,7 @@ import { Node } from '../shared/models/node.model';
 })
 export class NodeViewComponent implements OnInit {
 
-  id: number;
+  nid: number;
   node: Node;
 
   constructor(private nodeService: NodeService, private router: Router, private route: ActivatedRoute) { }
@@ -18,7 +18,7 @@ export class NodeViewComponent implements OnInit {
     // Use the node response data from Resolver;
     // @see node.resolver
     this.node = this.nodeService.getNodeData(this.route.snapshot.data['node']);
-    this.id = this.node.id;
+    this.nid = this.node.nid;
   }
 
 }

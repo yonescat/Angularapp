@@ -14,23 +14,23 @@
 </div>
 
 <div class="row">
-  <div class="col-md-6" *ngFor="let node of (filteredNodes ? filteredNodes.slice((pagination.page-1)*pageSize, (pagination.page)*pageSize): [])">
+  <div class="col-md-12" *ngFor="let node of (filteredNodes ? filteredNodes.slice((pagination.page-1)*pageSize, (pagination.page)*pageSize): [])">
     <div class="card">
-      <a *ngIf="node.imgURL" class="p-1 float-xs-left" [routerLink]="['/nodes', node.nid, 'view']">
-        <img class="rounded-circle" [src]="node.imgURL" [alt]="node.title" width="100" height="100"/>
+      <a *ngIf="node.field_image" class="p-1 float-xs-left" [routerLink]="['/nodes', node.nid, 'view']">
+        <img class="rounded-circle" src="https://www.yonescat.co.uk{{node.field_image}}" [alt]="node.title" width="100" height="100"/>
       </a>
       <div class="card-block">
-        <h4 class="card-title"><a [routerLink]="['/nodes', node.id, 'view']">{{node.title}}</a></h4>
-        <!--
-        <h6 class="card-subtitle text-muted">{{node.created|date:'short'}}</h6>
-        -->
+        <h4 class="card-title"><a [routerLink]="['/nodes', node.nid, 'view']">{{node.title}}</a></h4>
+        
+        <h6 [innerHTML]="node.body" class="card-subtitle text-muted">{{node.body}}</h6>
+
         <div class="card-text" [innerHTML]="node.teaser"></div>
         <div class="text-md-right">
-          <a [routerLink]="['/nodes', node.id, 'view']">view</a>
+          <a [routerLink]="['/nodes', node.nid, 'view']">view</a>
           |
-          <a [routerLink]="['/nodes', node.id, 'edit']">edit</a>
+          <a [routerLink]="['/nodes', node.nid, 'edit']">edit</a>
           |
-          <a [routerLink]="['/nodes', node.id, 'delete']">delete</a>
+          <a [routerLink]="['/nodes', node.nid, 'delete']">delete</a>
         </div>
       </div>
     </div>

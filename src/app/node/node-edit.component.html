@@ -21,7 +21,7 @@
 
       <div class="form-group" [class.has-danger]="content.invalid && !content.pristine">
         <label class="form-control-label" for="content">{{'content'}} *</label>
-        <textarea class="form-control" #content="ngModel" type="content" name="content" id="content" [(ngModel)]="node.content" rows="8" required
+        <textarea class="form-control" #content="ngModel" type="content" name="content" id="content" [(ngModel)]="node.body" rows="8" required
           minlength="10">
         </textarea>
         <div class="form-control-feedback" *ngIf="content.invalid && !content.pristine">

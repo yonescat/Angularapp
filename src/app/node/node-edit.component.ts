@@ -11,7 +11,7 @@ import { NodeService } from './node.service';
 export class NodeEditComponent implements OnInit {
   form_title: string;
   node: Node;
-  id: number;
+  nid: number;
   errorMessage: string;
 
   constructor(
@@ -26,13 +26,13 @@ export class NodeEditComponent implements OnInit {
       body: [{ value: this.node.content}],
       _links: {
           type: {
-            href: "http://drupal8.dev/rest/type/node/article"
+            href: "http://yonescat.co.uk/rest/type/node/article"
           }
       }
      };
 
-    if (this.id) {
-      this.nodeService.updateNode(this.id, _body)
+    if (this.nid) {
+      this.nodeService.updateNode(this.nid, _body)
         .map(res => res.json())
         .subscribe(
           response => this.nodeService.finishSaveNode(response, _body),
@@ -49,12 +49,12 @@ export class NodeEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.route.snapshot.params['id']) {
+    if (this.route.snapshot.params['nid']) {
       // Use the node response data from Resolver;
       // @see node.resolver
       this.node = this.nodeService.getNodeData(this.route.snapshot.data['node']);
-      this.id = this.node.id;
-      this.form_title = 'Edit node ' + this.node.title + ' [id:' + this.id + ']';
+      this.nid = this.node.nid;
+      this.form_title = 'Edit node ' + this.node.title + ' [nid:' + this.nid + ']';
     } else {
       // This for the create new node form.
       this.node = this.nodeService.newNodeData();
